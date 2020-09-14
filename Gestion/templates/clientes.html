@@ -1,0 +1,30 @@
+{% extends "cabecera.html" %}
+
+
+{% block content %}
+    
+    <h1 style="color:aliceblue"><strong>Clientes Registrados:</strong><a class="btn btn-default" href="{% url 'cliente_new' %}">Agregar nuevo</span></a></h1>
+
+     <table class="egt" style="color:aliceblue">
+        {% if clientes%}
+        <tr> 
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>DNI</th>
+          <th>email</th>
+        </tr>
+        {% for cliente in clientes %}
+        <tr>
+          <td>{{cliente.nombre}}</td>
+          <td>{{cliente.apellido}}</td>
+          <td>{{cliente.dni}}</td>
+          <td>{{cliente.email}}</td>
+          <td><a class="btn btn-default" href="{% url 'cliente_edit' id_cliente=cliente.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+        </tr>
+        {% endfor %}
+        {% else %}
+            <h2 style="color:aliceblue">No hay clientes...</h2>
+        {% endif %}
+      </table>
+
+{% endblock %}

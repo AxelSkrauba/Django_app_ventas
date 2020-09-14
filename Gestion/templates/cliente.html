@@ -1,0 +1,25 @@
+{% extends "cabecera.html" %}
+
+
+{% block content %}
+
+    <p style="color:aliceblue"><strong>Clientes Registrados:</strong></p>
+
+     <table class="egt" style="color:aliceblue">
+        <tr> 
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>DNI</th>
+          <th>email</th>
+        </tr>
+        {% for cliente in clientes %}
+        <tr>
+          <td>{{cliente.nombre}}</td>
+          <td>{{cliente.apellido}}</td>
+          <td>{{cliente.dni}}</td>
+          <td>{{cliente.email}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+{% endblock %}

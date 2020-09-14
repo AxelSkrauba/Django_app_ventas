@@ -1,0 +1,30 @@
+{% extends "cabecera.html" %}
+
+
+{% block content %}
+    
+    <h1 style="color:aliceblue"><strong>Ventas Registradas:</strong><a class="btn btn-default" href="{% url 'venta_new' %}">Agregar nueva</span></a></h1>
+
+     <table class="egt" style="color:aliceblue">
+        {% if ventas%}
+        <tr> 
+          <th>Fecha</th>
+          <th>Cliente</th>
+          <th>Artículos</th>
+          <th>Total</th>
+        </tr>
+        {% for venta in ventas %}
+        <tr>
+          <td>{{venta.fecha}}</td>
+          <td>{{venta.cliente}}</td>
+          <td>{{venta.articulos}}</td>
+          <td>{{venta.total}}</td>
+          <td><a class="btn btn-default" href="{% url 'venta_edit' id_venta=venta.pk%}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+        </tr>
+        {% endfor %}
+        {% else %}
+            <h2 style="color:aliceblue">No hay ventas...</h2>
+        {% endif %}
+      </table>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "cabecera.html" %}
+
+
+{% block content %}
+
+<h1 style="color:aliceblue"><strong>Artículos Registrados:</strong><a class="btn btn-default" href="{% url 'articulo_new' %}">Agregar nuevo</span></a></h1>
+
+<table class="egt" style="color:aliceblue">
+   
+   {% if articulos%}
+   <tr> 
+    <th>Código</th>
+    <th>Descripción</th>
+    <th>Precio</th>
+  </tr>
+   {% for articulo in articulos %}
+   <tr>
+     <td>{{articulo.codigo}}</td>
+     <td>{{articulo.descripcion}}</td>
+     <td>{{articulo.precio}}</td>
+     <td><a class="btn btn-default" href="{% url 'articulo_edit' id_articulo=articulo.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+   </tr>
+   {% endfor %}
+
+   {% else %}
+   <h2 style="color:aliceblue">No hay artículos...</h2>
+   {% endif %}
+ </table>
+
+{% endblock %}
