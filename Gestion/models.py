@@ -34,3 +34,7 @@ class Relaciones(models.Model):
     #articulos = models.TextField()
     articulos = models.ForeignKey(Articulos, null=True, blank=False, on_delete=models.SET_NULL)
     total = models.IntegerField()
+
+    def __str__(self):
+        default = '{} - {} - {}'.format(self.fecha,self.cliente,self.articulos)
+        return default

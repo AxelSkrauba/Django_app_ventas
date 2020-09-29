@@ -18,7 +18,7 @@
      <td>{{articulo.codigo}}</td>
      <td>{{articulo.descripcion}}</td>
      <td>{{articulo.precio}}</td>
-     <td><a class="btn btn-default" href="{% url 'articulo_edit' id_articulo=articulo.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+     <td><a class="btn btn-default" href="{% url 'articulo_edit' articulo.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
    </tr>
    {% endfor %}
 

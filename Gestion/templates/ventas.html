@@ -19,7 +19,7 @@
           <td>{{venta.cliente}}</td>
           <td>{{venta.articulos}}</td>
           <td>{{venta.total}}</td>
-          <td><a class="btn btn-default" href="{% url 'venta_edit' id_venta=venta.pk%}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+          <td><a class="btn btn-default" href="{% url 'venta_edit' venta.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
         </tr>
         {% endfor %}
         {% else %}

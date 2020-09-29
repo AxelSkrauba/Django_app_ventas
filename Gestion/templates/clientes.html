@@ -19,7 +19,7 @@
           <td>{{cliente.apellido}}</td>
           <td>{{cliente.dni}}</td>
           <td>{{cliente.email}}</td>
-          <td><a class="btn btn-default" href="{% url 'cliente_edit' id_cliente=cliente.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+          <td><a class="btn btn-default" href="{% url 'cliente_edit' cliente.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
         </tr>
         {% endfor %}
         {% else %}

@@ -7,7 +7,7 @@
 <form method="POST" class="post-form" style="color:aliceblue">{% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="save btn btn-default">Guardar</button>
-    <a class="btn btn-danger" href="{% url 'cliente_delete' id_cliente=id_cliente %}">Eliminar</a>
+    <a class="btn btn-danger" href="{% url 'cliente_delete' object.pk %}">Eliminar</a>
 
 </form>
 
